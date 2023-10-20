@@ -7,12 +7,12 @@ import * as cdk from "aws-cdk-lib"
 import { Construct } from "constructs"
 
 export class ProductsAppStack extends cdk.Stack {
-    readonly producstFetchHandler: lambdaNodeJs.NodejsFunction
+    readonly productsFetchHandler: lambdaNodeJs.NodejsFunction
 
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props)
 
-        this.producstFetchHandler = new lambdaNodeJs.NodejsFunction(this, "ProductsFetchFunction", {
+        this.productsFetchHandler = new lambdaNodeJs.NodejsFunction(this, "ProductsFetchFunction", {
             runtime: lambda.Runtime.NODEJS_16_X,
             functionName: "ProductsFetchFunction",
             entry: "lambda/products/productsFetchFunction.ts",
